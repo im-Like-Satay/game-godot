@@ -1,0 +1,27 @@
+name: "Auto Build Web"
+on: push # Berjalan tiap kali Anda upload/push kode
+
+jobs:
+  export_web:
+    runs-on: ubuntu-latest
+    name: Export Web
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Godot Web Export
+        uses: firebelley/godot-export@v5.2.1
+        with:
+          # GitHub yang akan download file besar ini, bukan Anda
+          godot_executable_download_url: https://github.com
+          godot_export_templates_download_url: https://github.com
+          relative_project_path: ./
+          archive_export_output: true
+          # Pastikan Anda sudah menambah preset "Web" di export menu Godot (tapi jangan di-export)
+          export_preset_name: Web
+
+      - name: Upload Hasil Jadi
+        uses: actions/upload-artifact@v4
+        with:
+          name: Game-Web-Saya
+          path: /home/runner/.local/share/godot/builds/
