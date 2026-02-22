@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c2sqo0ijy4u3j"]
+
+[ext_resource type="Texture2D" uid="uid://ctpowxlvd0we8" path="res://Assets/tileset/world_tileset.png" id="1_hx5ue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx5ue"]
+size = Vector2(14, 12)
+
+[node name="BoostJump" type="AnimatableBody2D" unique_id=1070761038]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2062369991]
+position = Vector2(70, 90)
+texture = ExtResource("1_hx5ue")
+region_enabled = true
+region_rect = Rect2(16.442154, 33.50528, 15.189484, 13.136848)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1527601784]
+position = Vector2(70, 90)
+shape = SubResource("RectangleShape2D_hx5ue")
+one_way_collision = true
