@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://ce772mwlmyl6h"]
+
+[ext_resource type="Texture2D" uid="uid://dyv5thkqtsims" path="res://character/nogo_idle/0 nogo.png" id="1_c4btx"]
+[ext_resource type="Texture2D" uid="uid://c4uat8sw46df4" path="res://character/nogo_idle/1 nogo.png" id="2_mts6m"]
+[ext_resource type="Texture2D" uid="uid://om66sj3er4t1" path="res://character/nogo_idle/2 nogo.png" id="3_2cdpb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1wxfl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_c4btx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mts6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2cdpb")
+}],
+"loop": true,
+"name": &"nogoIdle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_00o5l"]
+size = Vector2(85, 46)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=580408531]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1497194556]
+position = Vector2(624, 235)
+sprite_frames = SubResource("SpriteFrames_1wxfl")
+animation = &"nogoIdle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1659674505]
+visible = false
+position = Vector2(6, 8)
+shape = SubResource("RectangleShape2D_00o5l")

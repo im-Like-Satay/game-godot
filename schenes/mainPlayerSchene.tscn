@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://css5j5fx36325"]
+
+[node name="CharacterBody2D" unique_id=2020181477]
+
+[node name="Camera2D" type="Camera2D" parent="." index="2" unique_id=1786323707]
+position = Vector2(581, 324)
